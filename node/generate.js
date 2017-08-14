@@ -4,6 +4,11 @@ const nextChar = (ch) => {
     } 
 }
 
+const generateCharacterRange = (rangeSymbol) => {
+    const rangeEnds = rangeSymbol.split('-');
+    return generateCharacterRangeBetween(rangeEnds[0], rangeEnds[1]);
+}
+
 const generateCharacterRangeBetween = (start, end) => {
     let out = '';
     for(let c = start; c < end; c = nextChar(c)) {
@@ -12,18 +17,13 @@ const generateCharacterRangeBetween = (start, end) => {
     return out + end;
 }
 
-const generateCharacterRange = (rangeSymbol) => {
-    const rangeEnds = rangeSymbol.split('-');
-    return generateCharacterRangeBetween(rangeEnds[0], rangeEnds[1]);
-}
-
 const generateLowerCaseCharacterRange = () => {
     return generateCharacterRangeBetween('a', 'z');
 }
 
 module.exports = {
+    nextChar,
     generateCharacterRange,
     generateCharacterRangeBetween,
-    nextChar,
     generateLowerCaseCharacterRange
 };

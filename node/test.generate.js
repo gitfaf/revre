@@ -26,7 +26,24 @@ const test_generateLowerCaseCharacterRange = () => {
     const actual = generate.generateLowerCaseCharacterRange();
     printTestResult(expected, actual, 'test_generateLowerCaseCharacterRange');
 }
+
+const test_generateCharacterRange = () => {
+    const test_az = () => {
+        const expected = 'abcdefghijklmnopqrstuvwxyz';
+        const actual = generate.generateCharacterRange('a-z');
+        printTestResult(expected, actual, 'test_generateCharacterRange.test_az');
+    }
+    const test_px = () => {
+        const expected = 'pqrstuvwx';
+        const actual = generate.generateCharacterRange('p-x');
+        printTestResult(expected, actual, 'test_generateCharacterRange.test_px');
+    }
+    test_az();
+    test_px();
+}
+
 (function () {
     test_nextChar();
+    test_generateCharacterRange();
     test_generateLowerCaseCharacterRange();
 })();
