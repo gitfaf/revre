@@ -1,15 +1,15 @@
 const nextChar = (ch) => {
-    if(ch >= 'a' && ch <= 'z') {
+    if (ch >= 'a' && ch <= 'z') {
         return ch === 'z' ? 'z' : String.fromCharCode(ch.charCodeAt(0) + 1);
-    }
+    } 
 }
 
 const generateCharacterRangeBetween = (start, end) => {
     let out = '';
-    for(let c = start; c <= end; c = nextChar(c)) {
+    for(let c = start; c < end; c = nextChar(c)) {
         out += c;
     }
-    return out;
+    return out + end;
 }
 
 const generateCharacterRange = (rangeSymbol) => {
